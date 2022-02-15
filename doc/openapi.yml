@@ -1,0 +1,67 @@
+openapi: 3.0.2
+
+# API通信テスト時に利用する接続先
+servers:
+  - url: "http://localhost:3000"
+    description: "local api server"
+
+info:
+  title: "Rails7 API"
+  description: "サンプルアプリ"
+  version: "1.0.0"
+tags:
+  - name: "posts"
+    description: "投稿API"
+paths:
+  /api/v1/posts:
+    post:
+      summary: "投稿内容を取得"
+      description: "ユーザーを取得"
+      tags:
+        - "posts"
+      responses:
+        200:
+          description: "成功時"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  status:
+                    description: "サーバーステータスコード"
+                    type: "string"
+                    example: "SUCCESS"
+                  data:
+                    properties:
+                      title:
+                        description: "タイトル"
+                        type: "string"
+                        example: test title
+                      description:
+                        description: "投稿内容"
+                        type: "string"
+                        example: test description
+                    required:
+                      - "title"
+                      - "description"
+                required:
+                  - "status"
+                  - "data"
+
+components:
+  schemas:
+    Post:
+      description: "投稿"
+      type: "object"
+      properties:
+        title:
+          description: "タイトル"
+          type: "string"
+          example: test title
+        description:
+          description: "投稿内容"
+          type: "string"
+          example: test description
+      required:
+        - "title"
+        - "description"

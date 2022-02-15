@@ -9,3 +9,13 @@ services:
     volumes:
       - .:/rails7_api_test
     command: bash -c "rm -f tmp/pids/server.pid && rails s -p 3000 -b 0.0.0.0"
+
+  # swagger-uiイメージを同時に立ち上げる
+  doc:
+    image: swaggerapi/swagger-ui
+    volumes:
+      - ./doc/openapi.yml:/usr/share/nginx/html/openapi.yml
+    environment:
+      API_URL: openapi.yml
+    ports:
+      - 8080:8080
