@@ -1,6 +1,6 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
-ENV['RAILS_ENV'] ||= 'test'
+ENV['RAILS_ENV'] = 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
@@ -25,8 +25,19 @@ require 'rspec/rails'
 RSpec.configure do |config|
   # Remove this line to enable support for ActiveRecord
   config.use_active_record = false
+
   # FactoryBotのメソッドを直接呼び出せるように
   config.include FactoryBot::Syntax::Methods
+
+  # committeeの設定
+  # https://github.com/willnet/committee-rails
+  config.add_setting :committee_options
+  config.committee_options = {
+    schema_path: Rails.root.join("doc", "openapi.yml").to_s,
+    query_hash_key: 'rack.request.query_hash',
+    parse_response_by_content_type: false,
+  }
+  config.include Committee::Rails::Test::Methods
 
   # If you enable ActiveRecord support you should unncomment these lines,
   # note if you'd prefer not to run each example within a transaction, you

@@ -36,6 +36,9 @@ group :development, :test do
   # rspecの導入
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  # open-api.yml定義をテストに利用するためcommitteeを導入
+  gem 'committee'
+  gem 'committee-rails'
 end
 
 group :development do
