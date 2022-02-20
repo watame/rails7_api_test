@@ -23,6 +23,17 @@ module Rails7ApiTest
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    # generateコマンドを利用したファイル生成の際に実施する処理の変更
+    config.generators do |g|
+      # テストフレームワークに明示的にRSpecを利用するように変更
+      # Model, Request以外のテストファイルは必要となった際にだけ自分で作ることとする
+      g.test_framework :rspec, 
+        view_specs: false, 
+        helper_specs: false, 
+        controller_specs: false, 
+        routing_specs: false
+    end
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

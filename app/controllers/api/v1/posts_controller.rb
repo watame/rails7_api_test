@@ -4,7 +4,7 @@ module Api
   module V1
     class PostsController < ApplicationController
       def create
-        post = Posts.new(title: "test_title", description: "test_description")
+        post = Post.new(title: "test_title", description: "test_description")
         render json: { status: 'SUCCESS', data: post }
       end
     end
