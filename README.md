@@ -14,6 +14,7 @@ Dockerで環境構築を行う
     * 作成されたGemfileの`#gem rails`のコメントを外しておく
 5. Dockerfile作成
     * 内容はDockerfileを確認する
+    * **このタイミングでは`FROM ruby:3.1.0-slim`ではなく`FROM ruby:3.1.0`を利用する**
 6. `docker build -t rails7_api_test .`
 7. ```docker run --rm -v `pwd`:/rails7_api_test rails7_api_test rails new . --api –skip-bundle --skip-test --skip-turbolinks -O```
     * DBは不要なので`-O`でActiveRecordを利用しないようにする
