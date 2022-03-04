@@ -2,8 +2,10 @@ version: '3' # Docker Compose バージョンに対応するファイルバー�
 services:
   app:
     build:
-      context: . # ビルド時にカレントディレクトリを起点とする
-      dockerfile: ./Dockerfile # context から見た Dockerfile のパスを指定
+      context: . # ビルドの起点となるパスとしてカレントディレクトリを指定
+      dockerfile: Dockerfile.dev # context から見た Dockerfile のパスを指定
+      args:
+        SOURCE_DIR: /rails7_api_test
     ports:
       - '3000:3000' # localhost の 3000 ポートでアクセスできるようにする
     volumes:
