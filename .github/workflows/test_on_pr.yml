@@ -1,0 +1,17 @@
+name: test-on-pr
+# PRしたタイミングでActionが行われる
+on: [pull_request]
+jobs:
+  # GitHubActionのジョブID
+  test:
+    # ubuntuの最新バージョンでテスト実行
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      # yarn installを行い、WebPackerを導入しないとRequestSpec時にエラーが発生する
+      - name: Install yarn to docker-compose app
+        run: docker-compose -f docker-compose.dev.yml run app yarn install
+      # rspecを実行
+      - name: Execute rspec
+        run: docker-compose -f docker-compose.dev.yml run app rspec
