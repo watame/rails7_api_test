@@ -9,44 +9,26 @@ info:
   title: "Rails7 API"
   description: "サンプルアプリ"
   version: "1.0.0"
-tags:
-  - name: "posts"
-    description: "投稿API"
+
 paths:
   /api/v1/posts:
     post:
-      summary: "投稿内容を取得"
-      description: "ユーザーを取得"
       tags:
         - "posts"
+      summary: "投稿内容をDBに登録"
+      requestBody:
+        description: DBに登録する投稿内容
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post'
       responses:
         200:
           description: "成功時"
           content:
             application/json:
               schema:
-                type: "object"
-                properties:
-                  status:
-                    description: "サーバーステータスコード"
-                    type: "string"
-                    example: "SUCCESS"
-                  data:
-                    properties:
-                      title:
-                        description: "タイトル"
-                        type: "string"
-                        example: test title
-                      description:
-                        description: "投稿内容"
-                        type: "string"
-                        example: test description
-                    required:
-                      - "title"
-                      - "description"
-                required:
-                  - "status"
-                  - "data"
+                $ref: '#/components/schemas/Post'
 
 components:
   schemas:
