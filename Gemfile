@@ -39,6 +39,11 @@ group :development, :test do
   # open-api.yml定義をテストに利用するためcommitteeを導入
   gem 'committee'
   gem 'committee-rails'
+  # solargraph
+  gem 'solargraph'
+  # rubocop
+  gem 'rubocop'
+  gem 'rubocop-rails'
 end
 
 group :development do
