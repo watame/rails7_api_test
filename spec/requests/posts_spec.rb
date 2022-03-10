@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Posts", type: :request do
   describe "#create" do
     before do 
-      post api_v1_posts_path
+      post api_v1_posts_path, params: { post: attributes_for(:post) }
     end
 
     it "正常なレスポンスが戻ってくる" do
