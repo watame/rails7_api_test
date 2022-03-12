@@ -10,9 +10,9 @@
 # Cop supports --auto-correct.
 # Configuration parameters: AllowForAlignment, EnforcedStyleForExponentOperator.
 # SupportedStylesForExponentOperator: space, no_space
-Layout/SpaceAroundOperators:
-  Exclude:
-    - 'config/environments/production.rb'
+#Layout/SpaceAroundOperators:
+#  Exclude:
+#    - 'config/environments/production.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.
