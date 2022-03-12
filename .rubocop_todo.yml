@@ -9,9 +9,9 @@
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: AllowForAlignment, AllowBeforeTrailingComments, ForceEqualSignAlignment.
-Layout/ExtraSpacing:
-  Exclude:
-    - 'config/environments/production.rb'
+#Layout/ExtraSpacing:
+#  Exclude:
+#    - 'config/environments/production.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
