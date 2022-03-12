@@ -8,12 +8,6 @@
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Layout/EmptyLines:
-  Exclude:
-    - 'config/environments/development.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
 # Configuration parameters: AllowForAlignment, AllowBeforeTrailingComments, ForceEqualSignAlignment.
 Layout/ExtraSpacing:
   Exclude:
