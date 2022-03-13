@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Posts", type: :request do
   describe "#create" do
-    before do 
+    before do
       post api_v1_posts_path, params: { post: attributes_for(:post) }
     end
 

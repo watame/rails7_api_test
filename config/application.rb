@@ -19,6 +19,7 @@ require "action_cable/engine"
 Bundler.require(*Rails.groups)
 
 module Rails7ApiTest
+  # アプリケーション設定クラス
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
@@ -27,10 +28,10 @@ module Rails7ApiTest
     config.generators do |g|
       # テストフレームワークに明示的にRSpecを利用するように変更
       # Model, Request以外のテストファイルは必要となった際にだけ自分で作ることとする
-      g.test_framework :rspec, 
-                       view_specs: false, 
-                       helper_specs: false, 
-                       controller_specs: false, 
+      g.test_framework :rspec,
+                       view_specs: false,
+                       helper_specs: false,
+                       controller_specs: false,
                        routing_specs: false
     end
 

@@ -2,6 +2,7 @@
 module Api
   # namespaceのネスト
   module V1
+    # 投稿機能コントローラークラス
     class PostsController < ApplicationController
       def create
         # 受け取るパラメータはRailsの仕様で以下のように改変される
@@ -11,7 +12,7 @@ module Api
         post = Post.new(post_params)
         render json: post, status: :ok
       end
-      
+
       private
 
       def post_params

@@ -15,8 +15,8 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       # swagger-ui コンテナからの通信を許可
       origins "localhost:8080"
       resource "*",
-               :headers => :any,
-               :methods => [:get, :post, :put, :patch, :delete, :options, :head]
+               headers: :any,
+               methods: [:get, :post, :put, :patch, :delete, :options, :head]
     end
     if Rails.env.test?
       origins '*'
