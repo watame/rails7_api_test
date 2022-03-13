@@ -2,5 +2,12 @@ inherit_from: .rubocop_todo.yml
 
 require: rubocop-rails
 
+# 文字列をダブルクォートで統一
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+# frozen_string_literal: true を利用しないため、このチェックを無効とする
+# -> 上記設定を有効化することで文字列が全て強制的にfreezeされる
+# https://www.task-notes.com/entry/20160831/1472572735
+Style/FrozenStringLiteralComment:
+  Enabled: false
