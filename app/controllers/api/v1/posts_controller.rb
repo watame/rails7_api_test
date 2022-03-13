@@ -11,7 +11,7 @@ module Api
         post = Post.new(post_params)
         render json: post, status: :ok
       end
-      
+
       private
 
       def post_params
