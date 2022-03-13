@@ -33,7 +33,7 @@ RSpec.configure do |config|
   # https://github.com/willnet/committee-rails
   config.add_setting :committee_options
   config.committee_options = {
-    schema_path: Rails.root.join("doc", "openapi.yml").to_s,
+    schema_path: Rails.root.join("doc/openapi.yml").to_s,
     query_hash_key: 'rack.request.query_hash',
     parse_response_by_content_type: false,
   }
