@@ -73,7 +73,10 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
-    logger           = ActiveSupport::Logger.new(STDOUT)
+    # STDOUTを利用することはSTDOUTを再割り当てするのと同義とのこと
+    # https://qiita.com/griezin/items/70dc477942ff657f6e1b
+    # https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Style/GlobalStdStream
+    logger           = ActiveSupport::Logger.new($stdout)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
