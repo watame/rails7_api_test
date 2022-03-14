@@ -1,10 +1,10 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-require 'spec_helper'
-ENV['RAILS_ENV'] = 'test'
-require_relative '../config/environment'
+require "spec_helper"
+ENV["RAILS_ENV"] = "test"
+require_relative "../config/environment"
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
-require 'rspec/rails'
+require "rspec/rails"
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -34,8 +34,8 @@ RSpec.configure do |config|
   config.add_setting :committee_options
   config.committee_options = {
     schema_path: Rails.root.join("doc/openapi.yml").to_s,
-    query_hash_key: 'rack.request.query_hash',
-    parse_response_by_content_type: false,
+    query_hash_key: "rack.request.query_hash",
+    parse_response_by_content_type: false
   }
   config.include Committee::Rails::Test::Methods
 
