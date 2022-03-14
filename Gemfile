@@ -34,21 +34,21 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
   # rspecの導入
-  gem 'factory_bot_rails'
-  gem 'rspec-rails'
+  gem "factory_bot_rails"
+  gem "rspec-rails"
   # open-api.yml定義をテストに利用するためcommitteeを導入
-  gem 'committee'
-  gem 'committee-rails'
+  gem "committee"
+  gem "committee-rails"
   # solargraph
-  gem 'solargraph'
+  gem "solargraph"
   # rubocop
-  gem 'rubocop'
-  gem 'rubocop-rails'
+  gem "rubocop"
+  gem "rubocop-rails"
 end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
   # swagger-uiのCORSエラー対応のため導入
-  gem 'rack-cors'
+  gem "rack-cors"
 end
