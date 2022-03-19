@@ -4,6 +4,7 @@ FROM ruby:3.1.0-slim
 ARG SOURCE_DIR
 
 # 公開するポートを明示的に定義
+# 3000 -> Rails server
 EXPOSE 3000
 
 # 環境変数の設定
