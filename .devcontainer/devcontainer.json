@@ -46,6 +46,8 @@
         "rebornix.ruby",
         // solargraph extension
         "castwide.solargraph",
+        // debug gem extension
+        "KoichiSasada.vscode-rdbg",
     ],
 
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -55,7 +57,7 @@
     // "runServices": [],
 
     // Uncomment the next line if you want to keep your containers running after VS Code shuts down.
-    "shutdownAction": "none",
+    "shutdownAction": "stopCompose",
 
     // コンテナ起動時に実行するコマンドを指定できる
     // 今回はsolargraphでの補完対象にgemを含めるため、コンテナ起動時にyard gemsを実行させる
