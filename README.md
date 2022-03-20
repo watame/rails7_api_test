@@ -16,11 +16,15 @@ Dockerで環境構築を行う
     * 内容はDockerfileを確認する
     * **このタイミングでは`FROM ruby:3.1.0-slim`ではなく`FROM ruby:3.1.0`を利用する**
 6. `docker build -t rails7_api_test .`
-7. ```docker run --rm -v `pwd`:/rails7_api_test rails7_api_test rails new . --api –skip-bundle --skip-test --skip-turbolinks -O```
-    * DBは不要なので`-O`でActiveRecordを利用しないようにする
-8. docker-compose.yml作成
+7. `docker run --rm -v `pwd`:/rails7_api_test rails7_api_test rails new . --api –skip-bundle --skip-test --skip-turbolinks -O`
+    * DBは不要なので`-O`オプションでActiveRecord関連のライブラリを無効化してプロジェクト作成
+8. `docker rmi rails_api_test`
+    * 7.のイメージはRailsプロジェクトの作成以外には不要なので削除する
+9. Dockerfile更新
+    * `FROM ruby:3.1.0`を`FROM ruby:3.1.0-slim`に変更
+11. docker-compose.yml作成
     * 内容はdocker-composet.ymlを確認する
-9. `docker-compose build`
+12. `docker-compose build`
 
 ## Docker起動手順
 1. `docker-compose up`
