@@ -44,9 +44,9 @@ Dockerで環境構築を行う
     * `rm -f tmp/pids/server.pid && rdbg --command --open -- bin/rails s -p 3000 -b 0.0.0.0`
 3. ①->②の順にコマンドを選択し、rdbgにアタッチし、Rails server を起動させる
     * ![image](https://user-images.githubusercontent.com/16306537/159122725-2885951d-bd8c-4bba-a9ad-61709017f595.png)
-4. 実行後、[再生]ボタンを押下していけばサーバーが起動する
+4. 実行後、![image](https://user-images.githubusercontent.com/16306537/159208284-7295ec0e-00cb-492c-8fbc-98335c550c20.png)ボタンを押下するとサーバー起動プロセスが起動する
     * ![image](https://user-images.githubusercontent.com/16306537/159122931-5329d480-8d53-47cd-8846-38e1e9c3c084.png)
-5. ポートが解放されていたら、Rails serverが起動している
+5. `3000`番ポートが解放され、`puma 5.6.1`が起動していることを確認
     * ![image](https://user-images.githubusercontent.com/16306537/159123015-d538852b-c5dc-414f-a5c1-ee385d00e9e3.png)
 6. `localhost:3000`にアクセスすればサーバーが起動している
     * ![image](https://user-images.githubusercontent.com/16306537/159123055-4ca0027a-0a58-4b84-9c02-1f08aad5a127.png)
