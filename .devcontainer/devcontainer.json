@@ -23,8 +23,6 @@
     "settings": {
         // タブサイズを2に変更
         "editor.tabSize": 2,
-        // 保存時にフォーマットを行う
-        "editor.formatOnSave": true,
         // solargraph (Rubyのformatter) 用の設定
         "solargraph.bundlerPath": "/usr/local/bundle/bin/",
         // rubocop (Rubyのformatter) 用の設定
@@ -32,11 +30,13 @@
         "ruby.lint": {
             "rubocop": true
         },
+        // https://stackoverflow.com/questions/48030698/vscode-vscode-ruby-rubocop-how-to-auto-correct-on-save
+        "ruby.format": "rubocop",
         "[ruby]": {
+            // 保存時にフォーマットを行う
             "editor.formatOnSave": true,
-            "editor.formatOnSaveTimeout": 3000
+            "editor.formatOnSaveTimeout": 5000
         },
-        "ruby.format": "rubocop"
     },
 
     // 拡張機能のIDを記載する
@@ -44,6 +44,8 @@
     "extensions": [
         // ruby extension
         "rebornix.ruby",
+        // ruby function search extension
+        "miguel-savignano.ruby-symbols",
         // solargraph extension
         "castwide.solargraph",
         // debug gem extension
