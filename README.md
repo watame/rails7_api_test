@@ -19,7 +19,7 @@ Dockerで環境構築を行う
     * **このタイミングでは`FROM ruby:3.1.0-slim`ではなく`FROM ruby:3.1.0`を利用する**
 6. `docker build -t for_new_project .`
     * `for_new_project`というイメージ名でDockerイメージを作成する
-7. `docker run --rm -v `pwd`:/rails7_api_test for_new_project rails new . --api –skip-bundle --skip-test --skip-turbolinks -O`
+7. ```docker run --rm -v `pwd`:/rails7_api_test for_new_project rails new . --api –skip-bundle --skip-test --skip-turbolinks -O```
     * DBは不要なので`-O`オプションでActiveRecord関連のライブラリを無効化してプロジェクト作成
 8. `docker rmi for_new_project`
     * 7.のイメージはRailsプロジェクトの作成以外には不要なので削除する
