@@ -1,7 +1,7 @@
 FROM ruby:3.1.0-slim
 
 # 公開するポートを明示的に定義
-EXPOSE 3000
+EXPOSE 8000
 
 # 環境変数の設定
 ENV APP_ROOT=/rails7_api_test \
